@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "pry"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 
@@ -33,7 +34,7 @@ group :doc do
 end
 
 group :development do
-  gem "pry", '~> 0.10.3'
+  gem "pry"
 end
 
 group :test do
