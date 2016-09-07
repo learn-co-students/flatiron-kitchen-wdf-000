@@ -10,7 +10,7 @@ Ingredient.create([{name: 'salt'},{name: 'pepper'},{name: 'chocolate'},{name: 'm
 Recipe.create([{name: 'SaltnPepa'},{name: 'chocolate milk'}])
 
 #joins
-RecipeIngredient.create(integer_id: 1, recipe_id: 1)
-RecipeIngredient.create(integer_id: 2, recipe_id: 1)
-RecipeIngredient.create(integer_id: 3, recipe_id: 2)
-RecipeIngredient.create(integer_id: 4, recipe_id: 2)
+RecipeIngredient.create(ingredient_id: 1, recipe_id: 1)
+RecipeIngredient.create(ingredient_id: 2, recipe_id: 1)
+RecipeIngredient.create(ingredient_id: 3, recipe_id: 2)
+RecipeIngredient.create(ingredient_id: 4, recipe_id: 2)

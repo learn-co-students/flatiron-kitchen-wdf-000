@@ -1,0 +1,5 @@
+<h3>Lookee 'ere for all listed ingredients:</h3>
+
+<% @ingredients.each do |ingredient|%>
+  <%= render partial: "ingredient", locals: { ingredient: ingredient }%>
+<% end %>
