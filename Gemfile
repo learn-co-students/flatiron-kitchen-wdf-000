@@ -36,6 +36,7 @@ group :development do
   gem 'pry-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'faker', git: 'git@github.com:stympy/faker.git'
 end
 
 group :test do
