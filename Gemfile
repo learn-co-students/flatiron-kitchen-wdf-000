@@ -41,6 +41,7 @@ group :development do
   gem 'meta_request'
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
+  gem 'faker'
 end
 
 group :test do
