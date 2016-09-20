@@ -1,5 +1,16 @@
 <div style="border-bottom: 2px solid red">
   <ul>
-    <li><%= link_to recipe.name, recipe_path(recipe) %> | <%= link_to "Edit", edit_recipe_path(recipe) %></li>
+    <li><h3><%= link_to recipe.name, recipe_path(recipe) %> | <%= link_to "Edit", edit_recipe_path(recipe) %></h3></li>
   </ul>
+  <div style="margin-left: 25px;">
+    <ul>
+      <% if recipe.ingredients.empty? %>
+        <p>No Ingredienets Added</p>
+      <% else %>
+        <% recipe.ingredients.each do |ingredient| %>
+          <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
