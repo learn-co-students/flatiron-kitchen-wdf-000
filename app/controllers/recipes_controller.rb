@@ -15,6 +15,12 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe = set_recipe
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
