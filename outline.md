@@ -1,29 +1,50 @@
-migrations
+[Flatiron Kitchen Lab Link](https://learn.co/tracks/full-stack-web-development/rails/layouts-and-partials/flatiron-kitchen)
 
-Recipe
-  t.string :name
+## migrations
 
-Ingredient
-  t.string :name
+* Recipe
+  * t.string :name
 
-recipe_ingredients
-  t.integer :recipie_id
-  t.integer :ingredient_id
+* Ingredient
+  * t.string :name
+
+* recipe_ingredients
+  * t.integer :recipie_id
+  * t.integer :ingredient_id
 
 
-models
+## models
 
 class Recipe
-  has_many :ingredients
-  validates_presence_of :name
+ * has_many :recipe_ingredients
+ * has_many :ingredients, through: :recipe_ingredients
+
+ * validates_presence_of :name
 end
 
-class Ingredients
-  belongs_to :recipe
-  validates_presence_of :name
+class Ingredient
+ * has_many :recipe_ingredients
+ * has_many :recipes, through: :recipe_ingredients
+  
+ * validates_presence_of :name
 end
 
 class RecipeIngredients
-  belongs_to :recipe
-  belongs_to :ingredient
+ * belongs_to :recipe
+ * belongs_to :ingredient
 end
+
+
+## views
+
+recipes
+ * index (display all reciepes)
+ * show (show individual reciepe)
+ * new
+ * edit
+
+ingredients
+ * index (shows all ingredients and how many next to each)
+ * show (shows individual ingredient)
+ * new
+ * edit
