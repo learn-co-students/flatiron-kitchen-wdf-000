@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.search(params[:query])
   end
 
   def new
@@ -25,6 +25,12 @@ class RecipesController < ApplicationController
   end
 
   def update
+    @recipe = set_recipe
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe)
+    else
+      redirect_to edit_recipe_path
+    end
   end
 
   def destroy
