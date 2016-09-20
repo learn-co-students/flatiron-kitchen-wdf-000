@@ -41,7 +41,7 @@ group :development do
   gem 'meta_request'
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
-  gem 'faker'
+  gem 'faker', git: 'git@github.com:stympy/faker.git'
 end
 
 group :test do
