@@ -1,2 +1,15 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Recipes Index:</h1>
+
+<div style="display: flex; justify-content: space-between;">
+  <%= form_tag recipes_path, method: :get do %>
+    <div>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Search", name: nil %>
+    </div>
+  <% end %>
+  <div><%= link_to "Add New Recipe", new_recipe_path %></div>
+</div>
+
+<% @recipes.all.each do |recipe| %>
+  <%= render partial: 'recipe', locals: {recipe: recipe} %>
+<% end %>
