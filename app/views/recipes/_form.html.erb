@@ -1,12 +1,15 @@
-<div style="width: 50%; margin: 0 auto; text-align: center;">
+<div style="width: 75%; margin: 0 auto; text-align: center;">
   <div class="form-wrap" style="border: 3px solid black; background: #108080;">
     <%= form_for recipe do |f|%>
     <p>
       <%= f.label :name %>
       <%= f.text_field :name %>
     </p>
+    <p>
+      <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
+    </p>
       <%= f.submit %>
     <% end %>
   </div>
-  <div><%= link_to "Back to Index", recipes_path %></div>  
+  <div><%= link_to "Back to Index", recipes_path %></div>
 </div>
