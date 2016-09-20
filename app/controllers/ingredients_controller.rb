@@ -25,6 +25,12 @@ class IngredientsController < ApplicationController
   end
 
   def update
+    @ingredient = set_ingredient
+    if @ingredient.update(ingredient_params)
+      redirect_to ingredient_path(@ingredient)
+    else
+      redirect_to edit_ingredient_path
+    end
   end
 
   def delete
