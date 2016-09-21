@@ -1,6 +1,11 @@
 <div style="border-bottom: 2px solid red">
   <ul>
-    <li><h3><%= link_to recipe.name, recipe_path(recipe) %> | <%= link_to "Edit", edit_recipe_path(recipe) %></h3></li>
+    <li><h3>
+    <%= link_to recipe.name, recipe_path(recipe) %>
+    <%= " | You can make: " + recipe.count_dishes + " dishes | " %>
+    <%= link_to "Edit", edit_recipe_path(recipe) %>
+      
+    </h3></li>
   </ul>
   <div style="margin-left: 25px;">
     <ul>

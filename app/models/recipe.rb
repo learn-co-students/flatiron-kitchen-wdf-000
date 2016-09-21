@@ -20,4 +20,11 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+  def count_dishes
+    # BONUS IMPLEMENTATION (NOT VERY GOOD):
+    # looks at ingredients of particular recipe
+    # collects all ingredient amounts and returns smallest
+    self.ingredients.collect {|i| i.amount}.min.to_s
+  end
+
 end
