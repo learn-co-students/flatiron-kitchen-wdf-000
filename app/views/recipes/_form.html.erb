@@ -12,6 +12,7 @@
       Add Ingredient:
       <%= f.fields_for :ingredients, recipe.ingredients.build do |ingredient| %>
         <%= ingredient.text_field :name %>
+        <%= ingredient.number_field :amount, value: 1, in: 0..999, step: 1 %>
       <% end %>
     </p>
       <%= f.submit %>

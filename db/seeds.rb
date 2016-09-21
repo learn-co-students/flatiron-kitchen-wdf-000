@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Ingredient.destroy_all
 20.times do
-  Ingredient.create(name: Faker::Food.ingredient)
+  Ingredient.create(name: Faker::Food.ingredient, amount: 1)
 end
