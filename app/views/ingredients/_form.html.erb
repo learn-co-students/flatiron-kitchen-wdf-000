@@ -5,6 +5,10 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
     </p>
+    <p>
+      <%= f.label :amount %>
+      <%= f.number_field :amount, value: ingredient.amount, in: 0..999, step: 1 %>
+    </p>
       <%= f.submit %>
     <% end %>
   </div>
