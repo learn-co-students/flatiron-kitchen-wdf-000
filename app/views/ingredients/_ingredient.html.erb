@@ -1,0 +1,9 @@
+<div style="border-bottom: 2px solid red">
+  <ul>
+    <li>
+    <%= link_to ingredient.name, ingredient_path(ingredient) %>
+    <%= " | Amount: " + ingredient.amount.to_s + " | "%>
+    <%= link_to "Edit", edit_ingredient_path(ingredient) %>  
+    </li>
+  </ul>
+</div>

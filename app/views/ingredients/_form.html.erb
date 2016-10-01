@@ -1,0 +1,16 @@
+<div style="width: 50%; margin: 0 auto; text-align: center;">
+  <div class="form-wrap" style="border: 3px solid black; background: #108080;">
+    <%= form_for ingredient do |f|%>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :amount %>
+      <%= f.number_field :amount, value: ingredient.amount, in: 0..999, step: 1 %>
+    </p>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div><%= link_to "Back to Index", ingredients_path %></div>  
+</div>
