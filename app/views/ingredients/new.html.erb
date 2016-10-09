@@ -1,0 +1,14 @@
+New Ingredient for Recipe
+
+<%= form_for(Ingredient.new) do |f| %>
+<%= f.label :name %>
+<%= f.text_area :name %>
+
+
+
+
+
+
+<br><br>
+<%=f.submit "Create Ingredient"%>
+<%end%>
