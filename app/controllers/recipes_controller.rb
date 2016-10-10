@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 
   def new
+    @recipe = Recipe.new
   end
 
   def create
@@ -26,7 +27,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.valid?
       @recipe.update(recipe_params)
-      redirect_to recipe_path(@recipe)
+        redirect_to recipe_path(@recipe)
     else
       render "edit"
     end

@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
 
   def new
+    @ingredient = Ingredient.new
   end
 
 
@@ -8,7 +9,7 @@ class IngredientsController < ApplicationController
     ingredient = Ingredient.new(ingredient_params)
     if ingredient.valid?
       @ingredient = Ingredient.create(ingredient_params)
-      redirect_to ingredient_path(@ingredient)
+        redirect_to ingredient_path(@ingredient)
     else
       render "new"
     end
@@ -29,7 +30,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.valid?
       @ingredient.update(ingredient_params)
-      redirect_to ingredient_path(@ingredient)
+        redirect_to ingredient_path(@ingredient)
     else
       render "edit"
     end
