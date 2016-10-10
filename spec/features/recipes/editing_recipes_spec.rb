@@ -59,6 +59,7 @@ describe "editing recipes" do
       click_button('Update Recipe')
 
       expect(@recipe.ingredients.count).to eq(4)
+  
     end
 
 
