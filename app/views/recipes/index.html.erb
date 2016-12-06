@@ -1,0 +1,7 @@
+<h3>Spice Grills, Spiceless Grits, And Other Tasteful Delights</h3>
+<% @recipes.each do |recipe| %>
+  <h5><%= link_to recipe.name, recipe_path(recipe) %></h5>
+  <% recipe.ingredients.each do |ingredient|%>
+    <%= render partial: "ingredients/ingredient", locals: { ingredient: ingredient }%>
+  <% end %>
+<% end %>
